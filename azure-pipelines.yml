@@ -7,7 +7,7 @@ trigger:
 - azure-pipelines-bz
 
 pool:
-  vmImage: 'RecommendersAgentPool'
+ name: 'RecommendersAgentPool'
 
 steps:
 - script: echo Hello, world!
