@@ -88,6 +88,7 @@ This project welcomes contributions and suggestions. Before contributing, please
 ## Test new Devops Pipeline
 
 
-[![Build Status](https://dev.azure.com/best-practices/recommenders/_apis/build/status/Build-UnitTest?branchName=master)](https://dev.azure.com/best-practices/recommenders/_build/latest?definitionId=5&branchName=master)
+[![Build Status](https://dev.azure.com/best-practices/recommenders/_apis/build/status/Build-UnitTest?branchName=azure-pipelines-bz)](https://dev.azure.com/best-practices/recommenders/_build/latest?definitionId=5&branchName=azure-pipelines-bz)
 
 https://dev.azure.com/best-practices/recommenders/_apis/build/status/Build-UnitTest?branchName=azure-pipelines-bz
+
