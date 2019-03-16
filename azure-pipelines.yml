@@ -19,10 +19,6 @@ steps:
   displayName: Add Conda to PATH
 
 - bash: |
-    echo "##vso[task.prependpath]/data/anaconda/bin"
-  displayName: Add Conda to PATH
-
-- bash: |
     conda create -q -n reco python=3.5 -y
     conda env update -q -n reco -f image_classification/environment.yml
   displayName: 'Conda install dependencies'
