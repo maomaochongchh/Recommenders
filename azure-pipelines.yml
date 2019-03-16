@@ -18,6 +18,14 @@ steps:
     echo "##vso[task.prependpath]/data/anaconda/bin"
   displayName: Add Conda to PATH
 
+- task: UsePythonVersion@0
+
+  displayName: 'Use Python 3.5'
+
+  inputs:
+
+    versionSpec: 3.5
+
 - bash: |
     conda create -q -n reco python=3.5 -y
     conda env update -q -n reco -f image_classification/environment.yml
