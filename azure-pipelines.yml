@@ -18,6 +18,15 @@ steps:
     echo "##vso[task.prependpath]/data/anaconda/bin"
   displayName: Add Conda to PATH
 
+
+- task: UsePythonVersion@0
+
+  inputs:
+
+    versionSpec: '3.6'
+
+    architecture: 'x64' 
+    
 #- task: UsePythonVersion@0
 #
 #  displayName: 'Use Python 3.5'
