@@ -30,9 +30,9 @@ steps:
 #    conda create -q -n reco python=3.5 -y
 #    conda env update -q -n reco -f image_classification/environment.yml
 #  displayName: 'Conda install dependencies'
-
-- bash: |
-    source activate reco
-    cd image_classification
-    pytest tests/unit --junitxml=junit/test-unitttest.xml
-  displayName: 'tests'
+#
+#- bash: |
+#    source activate reco
+#    cd image_classification
+#    pytest tests/unit --junitxml=junit/test-unitttest.xml
+#  displayName: 'tests'
