@@ -25,11 +25,11 @@ steps:
 #  inputs:
 #
 #    versionSpec: 3.5
-
-- bash: |
-    conda create -q -n reco python=3.5 -y
-    conda env update -q -n reco -f image_classification/environment.yml
-  displayName: 'Conda install dependencies'
+#
+#- bash: |
+#    conda create -q -n reco python=3.5 -y
+#    conda env update -q -n reco -f image_classification/environment.yml
+#  displayName: 'Conda install dependencies'
 
 - bash: |
     source activate reco
