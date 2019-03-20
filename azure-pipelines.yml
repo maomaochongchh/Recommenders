@@ -11,29 +11,11 @@ pool:
  vmImage: 'RecoLinuxAgentGPU'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - bash: |
     echo "##vso[task.prependpath]/data/anaconda/bin"
   displayName: Add Conda to PATH
 
-
-- task: UsePythonVersion@0
-
-  inputs:
-
-    versionSpec: '3.6'
-
-    architecture: 'x64' 
-    
-#- task: UsePythonVersion@0
-#
-#  displayName: 'Use Python 3.5'
-#
-#  inputs:
-#
-#    versionSpec: 3.5
 #
 #- bash: |
 #    conda create -q -n reco python=3.5 -y
