@@ -24,10 +24,10 @@ steps:
 - script: python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- bash: | 
 #    cd Recommenders
-    conda update conda -n base
 # chg root
+- bash: | 
+    conda update conda -n base
   displayName: 'create conda env1'
 
 - bash: | 
