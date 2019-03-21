@@ -50,3 +50,9 @@ steps:
   displayName: 'install azureml-sdk'
 
 # set up aml compute
+
+#check core SDK version number
+- bash: |
+    import azureml.core
+    print("SDK version:", azureml.core.VERSION)
+  displayName: 'import'
