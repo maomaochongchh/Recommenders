@@ -15,14 +15,18 @@ steps:
   inputs:
     versionSpec: '3.6'
     architecture: 'x64'
+  displayName: Use Python 3.6
+
 - bash: |
     echo "##vso[task.prependpath]/data/anaconda/bin"
   displayName: Add Conda to PATH
 
 
 - bash: |
+    pwd
+    ls -al scripts
     scripts/generate_conda_file.py
-    conda create -q -n reco_base python=3.5 -y
+    conda create -q -n reco_base python=3.6 -y
   displayName: 'Conda create reco_base env'
 
 - bash: |
