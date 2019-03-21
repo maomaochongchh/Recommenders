@@ -24,5 +24,6 @@ steps:
 
 - bash: |
     source activate reco_base
-    pytest tests/unit --junitxml=junit/test-unitttest.xml
+    pytest --version
+#    pytest tests/unit --junitxml=junit/test-unitttest.xml
   displayName: 'unit tests'
