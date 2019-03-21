@@ -25,6 +25,7 @@ steps:
   displayName: ' generate_conda_file.py'
 
 - bash: | 
+    conda update anaconda
     conda env create -f reco_base.yaml 
   displayName: 'create conda env'
   
