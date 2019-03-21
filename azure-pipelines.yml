@@ -11,6 +11,10 @@ pool:
 
 steps:
 
+- task: UsePythonVersion&0
+  inputs:
+    versionSpec: '3.6'
+    architecture: 'x64'
 - bash: |
     echo "##vso[task.prependpath]/data/anaconda/bin"
   displayName: Add Conda to PATH
