@@ -42,4 +42,7 @@ steps:
   displayName: 'unit tests'
 
 # install aml sdk
+- bash: |
+    pip install azureml-sdk
+  displayName: 'install azureml-sdk'
 
