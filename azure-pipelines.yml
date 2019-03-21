@@ -20,16 +20,21 @@ steps:
 - bash: |
     echo "##vso[task.prependpath]/data/anaconda/bin"
   displayName: Add Conda to PATH
-
 - script: python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
 - bash: | 
     cd Recommenders
     conda update conda -n root
+  displayName: 'create conda env1'
+
+- bash: | 
     conda update anaconda
+  displayName: 'create conda env2'
+
+  - bash: | 
     conda env create -f reco_gpu.yaml 
-  displayName: 'create conda env'
+  displayName: 'create conda env3'
 
 #- task: PythonScript@0: |
 # "$(Build.SourcesDirectory)\anyscript.py"
