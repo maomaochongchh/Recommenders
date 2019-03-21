@@ -23,12 +23,12 @@ steps:
 
 - script: python scripts/generate_conda_file.py
   displayName: ' generate_conda_file.py'
-  
+
 #- task: PythonScript@0: |
 # "$(Build.SourcesDirectory)\anyscript.py"
 #    scripts/generate_conda_file.py
 #    conda create -q -n reco_base python=3.6 -y
-  displayName: 'Conda create reco_base env'
+#  displayName: 'Conda create reco_base env'
 
 - bash: |
     conda -V
