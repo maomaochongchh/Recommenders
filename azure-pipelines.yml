@@ -25,7 +25,7 @@ steps:
   displayName: ' generate_conda_file.py'
 
 - bash: | 
-    cd Recommenders
+#    cd Recommenders
     conda update conda -n base
 # chg root
   displayName: 'create conda env1'
