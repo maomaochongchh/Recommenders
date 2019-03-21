@@ -36,7 +36,7 @@ steps:
 
 - bash: |
     conda -V
-    source activate reco_base
+    conda activate reco_base
 #    pytest --version
 #    pytest tests/unit --junitxml=junit/test-unitttest.xml
   displayName: 'unit tests'
