@@ -32,7 +32,7 @@ steps:
     conda update anaconda
   displayName: 'create conda env2'
 
-  - bash: | 
+- bash: | 
     conda env create -f reco_gpu.yaml 
   displayName: 'create conda env3'
 
