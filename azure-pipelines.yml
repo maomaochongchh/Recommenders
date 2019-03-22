@@ -25,8 +25,8 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- script:
-    ls;
+- bash:
+    ls
     which -a conda
   displayName: 'ls'
   
@@ -44,7 +44,6 @@ steps:
 
 - bash:   
     conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
-#    del env
   displayName: 'create conda env3'
 
 - task: PythonScript@0
