@@ -31,13 +31,13 @@ steps:
 #   enable: false
 # displayName: 'create conda env1'
 
-- bash: | 
-     conda install -c conda conda-env
-  displayName: 'create conda env2'
+#- bash: | 
+#     conda install -c conda conda-env
+#  displayName: 'create conda env2'
 
 - bash:   
-    conda env create -q -n reco_gpu -f reco_gpu.yaml -y
-#    conda env create -n -f reco_gpu.yaml 
+    conda create -q -n reco_gpu -f reco_gpu.yaml -y
+#    del env
   displayName: 'create conda env3'
 
 - bash: |
