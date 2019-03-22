@@ -26,15 +26,15 @@ steps:
 
 #    cd Recommenders
 # chg root
-- bash: | 
-    conda update conda -n base
-    enable: false
-  displayName: 'create conda env1'
+#- bash: | 
+#   conda update conda -n base
+#   enable: false
+# displayName: 'create conda env1'
 
-- bash: | 
-    conda update anaconda
-    enable: false
-  displayName: 'create conda env2'
+#- bash: | 
+#    conda update anaconda
+#    enable: false
+#  displayName: 'create conda env2'
 
 - bash: | 
     conda env create -f reco_gpu.yaml 
