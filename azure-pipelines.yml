@@ -23,9 +23,12 @@ steps:
 
 - script: 
      python scripts/generate_conda_file.py --gpu
-     ls
   displayName: ' generate_conda_file.py'
 
+- script:
+     ls
+  displayName: 'ls'
+  
 #    cd Recommenders
 # chg root
 #- bash: | 
