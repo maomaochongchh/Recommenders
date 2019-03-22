@@ -28,10 +28,12 @@ steps:
 # chg root
 - bash: | 
     conda update conda -n base
+    enable: false
   displayName: 'create conda env1'
 
 - bash: | 
     conda update anaconda
+    enable: false
   displayName: 'create conda env2'
 
 - bash: | 
@@ -40,19 +42,8 @@ steps:
 
 - bash: |
     source activate reco_gpu
-#    pytest --version
-#    pytest tests/unit --junitxml=junit/test-unitttest.xml
+    pytest --version
+    python -c "import azureml.core; print("SDK version:", azureml.core.VERSION)"
+    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
   displayName: 'unit tests'
 
-# install aml sdk
-- bash: |
-    pip install azureml-sdk
-  displayName: 'install azureml-sdk'
-
-# set up aml compute
-
-#check core SDK version number
-- bash: |
-    import azureml.core
-    print("SDK version:", azureml.core.VERSION)
-  displayName: 'import'
