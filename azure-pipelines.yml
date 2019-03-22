@@ -37,7 +37,7 @@ steps:
 #  displayName: 'create conda env2'
 
 - bash: | 
-    conda env create -f reco_gpu.yaml 
+    conda env create -n -f reco_gpu.yaml 
   displayName: 'create conda env3'
 
 - bash: |
