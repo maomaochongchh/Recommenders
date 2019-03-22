@@ -30,6 +30,7 @@ steps:
     which -a conda
   displayName: 'ls'
   
+
 #    cd Recommenders
 # chg root
 #- bash: | 
@@ -46,6 +47,14 @@ steps:
 #    del env
   displayName: 'create conda env3'
 
+- task: PythonScript@0
+  inputs:
+    targetType: 'inline'
+    script: |
+      print('Hello world 1')
+      print('Hello world 2')
+  displayName: ' Python Script'
+  
 - bash: |
     source activate reco_gpu
     pytest --version
