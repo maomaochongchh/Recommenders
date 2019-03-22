@@ -26,7 +26,7 @@ steps:
   displayName: ' generate_conda_file.py'
 
 - script:
-     ls
+    ls
     which -a conda
   displayName: 'ls'
   
