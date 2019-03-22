@@ -27,6 +27,7 @@ steps:
 
 - script:
      ls
+    which -a conda
   displayName: 'ls'
   
 #    cd Recommenders
@@ -41,7 +42,7 @@ steps:
 #  displayName: 'create conda env2'
 
 - bash:   
-    conda create -q -n reco_gpu -f ./reco_gpu.yaml -y python=3.6
+    conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
 #    del env
   displayName: 'create conda env3'
 
