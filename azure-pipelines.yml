@@ -61,3 +61,7 @@ steps:
     pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
   displayName: 'unit tests'
 
+  - script: 
+     python scripts/test_aml_compute.py
+  displayName: ' test_aml_compute'
+
