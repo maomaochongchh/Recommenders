@@ -27,6 +27,8 @@ steps:
 
 - bash:
     ls
+    cd scripts
+    ls
     which -a conda
   displayName: 'ls'
   
