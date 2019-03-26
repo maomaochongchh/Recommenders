@@ -30,7 +30,6 @@ steps:
 #    cd scripts
 #    ls
     which -a conda
-    echo 
   displayName: 'ls'
   
 
