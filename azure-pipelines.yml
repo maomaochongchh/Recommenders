@@ -49,6 +49,7 @@ steps:
 - bash: |
     echo "$BUILD_REPOSITORY_LOCALPATH"
     ls
+    more reco_gpu.yaml
     conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
   displayName: 'create conda env3'
 
