@@ -59,8 +59,8 @@ steps:
 - bash: |
     source activate reco_gpu
     pytest --version
-    python -c "import azureml.core; print("SDK version:", azureml.core.VERSION)"
-    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
+#    python -c "import azureml.core; print("SDK version:", azureml.core.VERSION)"
+#    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
   displayName: 'unit tests'
 
 #- task: PythonScript@0:
