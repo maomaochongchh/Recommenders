@@ -40,7 +40,7 @@ steps:
 #   enable: false
 # displayName: 'create conda env1'
 
-#- bash: | 
+#- script: | 
 #     conda install -c conda conda-env
 #  displayName: 'create conda env2'
 
