@@ -26,12 +26,12 @@ steps:
   displayName: ' generate_conda_file.py'
 
 - bash:
-#    targetType: inline
-  script: |
-    ls
-    cd scripts
-    ls
-    which -a conda
+    targetType: inline
+    script: |
+      ls
+      cd scripts
+      ls
+      which -a conda
   displayName: 'ls'
   
 
