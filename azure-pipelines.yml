@@ -26,6 +26,8 @@ steps:
   displayName: ' generate_conda_file.py'
 
 - bash:
+#    targetType: inline
+  script: |
     ls
     cd scripts
     ls
