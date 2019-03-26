@@ -27,9 +27,10 @@ steps:
 
 - bash: |
     ls
-    cd scripts
-    ls
+#    cd scripts
+#    ls
     which -a conda
+    echo 
   displayName: 'ls'
   
 
@@ -44,7 +45,11 @@ steps:
 #     conda install -c conda conda-env
 #  displayName: 'create conda env2'
 
-- bash: | 
+#import os before importing
+
+- bash: |
+    echo "$BUILD_REPOSITORY_LOCALPATH"
+    ls
     conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
   displayName: 'create conda env3'
 
