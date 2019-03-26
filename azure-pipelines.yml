@@ -46,7 +46,7 @@ steps:
 
 - bash: | 
     conda config --append channels conda-forge
-    conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
+    conda create -q -n reco_gpu --file ./reco_gpu.yaml -y
   displayName: 'create conda env3'
 
 - task: PythonScript@0
