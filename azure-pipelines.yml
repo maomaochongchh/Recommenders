@@ -27,7 +27,7 @@ steps:
 
 - task: Bash@0
   inputs:
-    targetType: inline
+#    targetType: inline
     script: |
       ls
       cd scripts
