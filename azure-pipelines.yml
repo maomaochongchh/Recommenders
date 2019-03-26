@@ -25,12 +25,12 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- bash: |
-    ls
+#- bash: |
+#    ls
 #    cd scripts
 #    ls
-    which -a conda
-  displayName: 'ls'
+#    which -a conda
+#  displayName: 'ls'
   
 
 #    cd Recommenders
