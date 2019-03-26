@@ -25,7 +25,8 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- bash:
+- task: Bash@0
+  inputs:
     targetType: inline
     script: |
       ls
