@@ -46,11 +46,11 @@ steps:
 
 #import os before importing
 
-- bash: |
+- script: |
     echo "$BUILD_REPOSITORY_LOCALPATH"
     ls
     more reco_gpu.yaml
-    conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
+    conda create --yes --quiet --name reco_gpu --file ./reco_gpu.yaml 
   displayName: 'create conda env3'
 
 - task: PythonScript@0
