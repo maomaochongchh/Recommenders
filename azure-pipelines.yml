@@ -30,21 +30,21 @@ steps:
     conda env create -n reco_gpu -f ./reco_gpu.yaml 
   displayName: 'create conda env3'
 
-- task: PythonScript@0
-  inputs:
-    targetType: 'inline'
-    script: |
-      print('Hello world 1')
-      print('Hello world 2')
-  displayName: ' Python Script'
+#- task: PythonScript@0
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#      print('Hello world 1')
+#      print('Hello world 2')
+#  displayName: ' Python Script'
   
-- bash: |
-    conda env list
-    source activate reco_gpu
-    pytest --version
+#- bash: |
+#    conda env list
+#    source activate reco_gpu
+#    pytest --version
 #    python -c "import azureml.core; print("SDK version:", azureml.core.VERSION)"
 #    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
-  displayName: 'unit tests'
+#  displayName: 'unit tests'
 
 - task: AzureCLI@1
   displayName: 'Create or get workspace'
