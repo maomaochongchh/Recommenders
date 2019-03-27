@@ -1,3 +1,4 @@
+
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
@@ -25,27 +26,8 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- bash: |
-    ls
-    cd scripts
-    ls
-    which -a conda
-  displayName: 'ls'
-  
-
-#    cd Recommenders
-# chg root
-#- bash: | 
-#   conda update conda -n base
-#   enable: false
-# displayName: 'create conda env1'
-
-#- script: | 
-#     conda install -c conda conda-env
-#  displayName: 'create conda env2'
-
-- bash: | 
-    conda create -q -n reco_gpu -f ./reco_gpu.yaml -y
+- script: |
+    conda env create -n reco_gpu -f ./reco_gpu.yaml 
   displayName: 'create conda env3'
 
 - task: PythonScript@0
@@ -57,17 +39,28 @@ steps:
   displayName: ' Python Script'
   
 - bash: |
+    conda env list
     source activate reco_gpu
     pytest --version
-    python -c "import azureml.core; print("SDK version:", azureml.core.VERSION)"
-    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
+#    python -c "import azureml.core; print("SDK version:", azureml.core.VERSION)"
+#    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
   displayName: 'unit tests'
+
+- task: AzureCLI@1
+  displayName: 'Create or get workspace'
+  inputs:
+    azureSubscription: 'AzureML Nursery (15ae9cb6-95c1-483d-a0e3-b1a1a3b06324)'
+    scriptLocation: inlineScript
+    inlineScript: 'python scripts/00-Workspace.py'
 
 #- task: PythonScript@0:
 ##  inputs:
 #    targetType: 'inline'
 #    script:
 #      ws = Workspace(subscription_id = 15ae9cb6-95c1-483d-a0e3-b1a1a3b06324, resource_group = 'recommender', workspace_name = 'RecoWS')
+#    echo "$BUILD_REPOSITORY_LOCALPATH"
+#    ls
+
 #  displayName: ' set up ws'
 
 #- script: 
