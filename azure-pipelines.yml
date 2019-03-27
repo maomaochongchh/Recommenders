@@ -26,27 +26,6 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-#- bash: |
-#    ls
-#    cd scripts
-#    ls
-#    which -a conda
-#  displayName: 'ls'
-  
-
-#    cd Recommenders
-# chg root
-#- bash: | 
-#   conda update conda -n base
-#   enable: false
-# displayName: 'create conda env1'
-
-#- script: | 
-#     conda install -c conda conda-env
-#  displayName: 'create conda env2'
-
-#import os before importing
-
 - script: |
     conda env create -n reco_gpu -f ./reco_gpu.yaml 
   displayName: 'create conda env3'
