@@ -48,7 +48,7 @@ steps:
 #import os before importing
 
 - script: |
-    conda env create -q -n reco_gpu -f ./reco_gpu.yaml 
+    conda env create -n reco_gpu -f ./reco_gpu.yaml 
   displayName: 'create conda env3'
 
 - task: PythonScript@0
