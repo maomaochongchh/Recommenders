@@ -30,6 +30,10 @@ steps:
     conda env create -n reco_gpu -f ./reco_gpu.yaml 
   displayName: 'create conda env3'
 
+- script: |
+     ls
+  displayName: 'ls'
+
 #- task: PythonScript@0
 #  inputs:
 #    targetType: 'inline'
