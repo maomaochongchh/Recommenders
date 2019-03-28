@@ -32,6 +32,7 @@ steps:
 
 - script: |
      ls
+     ls /scripts
   displayName: 'ls'
 
 #- task: PythonScript@0
