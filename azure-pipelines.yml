@@ -56,7 +56,7 @@ steps:
   inputs:
     azureSubscription: 'AzureML Nursery (15ae9cb6-95c1-483d-a0e3-b1a1a3b06324)'
     scriptLocation: inlineScript
-    inlineScript: 'python scripts/00-Workspace.py'
+    inlineScript: 'python scripts/00-WorkSpace.py'
 
 #- task: PythonScript@0:
 ##  inputs:
