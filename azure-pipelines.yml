@@ -31,7 +31,7 @@ steps:
   displayName: 'create conda env3'
 
 - script: |
-     ls ./scripts
+     chmod +x scripts/*.py
   displayName: 'ls'
 
 #- task: PythonScript@0
