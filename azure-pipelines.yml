@@ -32,6 +32,7 @@ steps:
 
 - script: |
      chmod +x scripts/*.py
+     ls -al
   displayName: 'ls'
 
 #- task: PythonScript@0
