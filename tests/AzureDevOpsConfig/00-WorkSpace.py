@@ -131,7 +131,7 @@ else:
     
      # For a more detailed view of current AmlCompute status, use get_status()
     print(compute_target.get_status().serialize())
-'''
+
 #
 # Provision as a run based compute target
 #
@@ -151,8 +151,8 @@ run_config.target = "amlcompute"
 
 run_config.amlcompute.vm_size = 'STANDARD_NC6'
 
-# enable Docker 
-run_config.environment.docker.enabled = True
+# Do NOT enable Docker 
+run_config.environment.docker.enabled = False
 
 # set Docker base image to the default CPU-based image
 run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
@@ -164,13 +164,15 @@ run_config.environment.python.user_managed_dependencies = False
 run_config.auto_prepare_environment = True
 
 # specify CondaDependencies obj
-run_config.environment.python.conda_dependencies = CondaDependencies.create(conda_packages=['scikit-learn'])
+run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='reco_gpu.yaml')
 
 # Now submit a run on AmlCompute
 from azureml.core.script_run_config import ScriptRunConfig
 
+project_folder = "."
+
 script_run_config = ScriptRunConfig(source_directory=project_folder,
-                                    script='train.py',
+                                    script='runpytest.py',
                                     run_config=run_config)
 
 run = experiment.submit(script_run_config)
