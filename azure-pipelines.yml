@@ -37,6 +37,8 @@ steps:
 - script: |
      chmod +x scripts/*.py
      ls -al scripts
+     chmod +x tests/AzureDevOpsConfig/*.py
+     ls -al tests/AzureDevOpsConfig
   displayName: 'ls'
 
 #- task: PythonScript@0
