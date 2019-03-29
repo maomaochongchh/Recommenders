@@ -41,6 +41,7 @@ location = config["location"]
 cli_auth = AzureCliAuthentication()
 
 try:
+    print("Trying to get ws")
     ws = Workspace.get(
         name=workspace_name,
         subscription_id=subscription_id,
@@ -62,3 +63,4 @@ except:
 
 # print Workspace details
 print(ws.name, ws.resource_group, ws.location, ws.subscription_id, sep="\n")
+print(ws.getdetails())
