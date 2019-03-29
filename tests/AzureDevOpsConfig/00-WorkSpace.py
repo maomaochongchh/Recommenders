@@ -28,6 +28,7 @@ import os, json, sys
 import azureml.core
 from azureml.core.authentication import AzureCliAuthentication
 from azureml.core import Workspace
+import azureml.core
 
 print("SDK Version:", azureml.core.VERSION)
 # print('current dir is ' +os.curdir)
@@ -69,7 +70,6 @@ except:
 
 # print Workspace details
 print(ws.name, ws.resource_group, ws.location, ws.subscription_id, sep="\n")
-print(ws.getdetails())
 
 
 from azureml.core import Experiment
