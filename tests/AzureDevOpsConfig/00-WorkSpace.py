@@ -174,7 +174,7 @@ from azureml.core.script_run_config import ScriptRunConfig
 project_folder = "."
 
 script_run_config = ScriptRunConfig(source_directory=project_folder,
-                                    script='runpytest.py',
+                                    script='./tests/AzureDevOpsConfig/runpytest.py',
                                     run_config=run_config)
 
 run = experiment.submit(script_run_config)
