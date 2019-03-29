@@ -151,6 +151,7 @@ run_config.target = "amlcompute"
 
 run_config.amlcompute.vm_size = 'STANDARD_NC6'
 
+'''
 # Do NOT enable Docker 
 run_config.environment.docker.enabled = False
 
@@ -162,6 +163,7 @@ run_config.environment.python.user_managed_dependencies = False
 
 # auto-prepare the Docker image when used for execution (if it is not already prepared)
 run_config.auto_prepare_environment = True
+'''
 
 # specify CondaDependencies obj
 run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='reco_gpu.yaml')
@@ -179,4 +181,7 @@ run = experiment.submit(script_run_config)
 
 # Show run details
 run
-'''
+# go to azure portal to see log in azure ws and look for experiment name and look for individual run
+
+# call sdk fcn to log to aml compute and then from control plane, pull it back down
+
