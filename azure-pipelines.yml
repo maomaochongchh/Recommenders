@@ -26,8 +26,8 @@ steps:
   displayName: 'Prepare Conda Environment (using yml)'
   continueOnError: true
 
-- script: 'sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli'
-  displayName: 'update azure-cli'
+#- script: 'sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli'
+#  displayName: 'update azure-cli'
   
 - script: 
      python scripts/generate_conda_file.py --gpu
@@ -43,6 +43,13 @@ steps:
      chmod +x tests/AzureDevOpsConfig/*.py
      ls -al tests/AzureDevOpsConfig
   displayName: 'ls'
+
+- script: |
+     python --version
+     pip install azure-cli==2.0.46
+     pip install --upgrade azureml-sdk[cli]
+     pip install -r requirements.txt
+  displayName: 'install cli'
 
 #- task: PythonScript@0
 #  inputs:
