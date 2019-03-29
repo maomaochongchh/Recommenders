@@ -27,6 +27,7 @@ from azureml.core import Workspace
 import os, json, sys
 import azureml.core
 from azureml.core.authentication import AzureCliAuthentication
+from azureml.core import Workspace
 
 print("SDK Version:", azureml.core.VERSION)
 # print('current dir is ' +os.curdir)
