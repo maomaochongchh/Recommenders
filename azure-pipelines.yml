@@ -26,6 +26,9 @@ steps:
   displayName: 'Prepare Conda Environment (using yml)'
   continueOnError: true
 
+- script: 'sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli'
+  displayName: 'update azure-cli'
+  
 - script: 
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
