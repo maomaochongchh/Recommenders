@@ -156,8 +156,8 @@ run_config.amlcompute.vm_size = 'STANDARD_NC6'
 run_config.environment.docker.enabled = True
 
 # set Docker base image to the default CPU-based image
-#run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
-run_config.environment.docker.base_image = 'continuumio/miniconda3'
+run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+#run_config.environment.docker.base_image = 'continuumio/miniconda3'
 
 # use conda_dependencies.yml to create a conda environment in the Docker image for execution
 run_config.environment.python.user_managed_dependencies = False
@@ -179,6 +179,7 @@ script_run_config = ScriptRunConfig(source_directory=project_folder,
                                     run_config=run_config)
 
 run = experiment.submit(script_run_config)
+run.wait_for_completion(show_output=True, wait_post_processing=True)
 
 # Show run details
 run
