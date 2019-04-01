@@ -151,19 +151,20 @@ run_config.target = "amlcompute"
 
 run_config.amlcompute.vm_size = 'STANDARD_NC6'
 
-'''
+
 # Do NOT enable Docker 
-run_config.environment.docker.enabled = False
+run_config.environment.docker.enabled = True
 
 # set Docker base image to the default CPU-based image
-run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+#run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+run_config.environment.docker.base_image = 'continuumio/miniconda3'
 
 # use conda_dependencies.yml to create a conda environment in the Docker image for execution
 run_config.environment.python.user_managed_dependencies = False
 
 # auto-prepare the Docker image when used for execution (if it is not already prepared)
 run_config.auto_prepare_environment = True
-'''
+
 
 # specify CondaDependencies obj
 run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='reco_gpu.yaml')
