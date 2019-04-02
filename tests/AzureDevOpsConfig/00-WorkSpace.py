@@ -165,13 +165,14 @@ run_config.environment.python.user_managed_dependencies = False
 # auto-prepare the Docker image when used for execution (if it is not already prepared)
 run_config.auto_prepare_environment = True
 
-
-# specify CondaDependencies obj
-run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='./tests/reco_gpu.yaml')
-
 import os
 
 print(os.path.dirname('reco_gpu.yaml'))
+
+# specify CondaDependencies obj
+run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='reco_gpu.yaml')
+
+
 
 # Now submit a run on AmlCompute
 from azureml.core.script_run_config import ScriptRunConfig
