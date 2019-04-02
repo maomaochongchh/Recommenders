@@ -104,7 +104,9 @@ from azureml.core.compute import ComputeTarget
 import os
 
 # choose a name for your cluster
+
 compute_name = os.environ.get("AML_COMPUTE_CLUSTER_NAME", "cpucluster")
+
 compute_min_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MIN_NODES", 0)
 compute_max_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MAX_NODES", 4)
 
@@ -143,6 +145,7 @@ from azureml.core.runconfig import DEFAULT_CPU_IMAGE
 run_config = RunConfiguration()
 
 # signal that you want to use AmlCompute to execute script.
+# set to 'local' instead of amlcompute when running in local docker
 run_config.target = "amlcompute"
 
 # AmlCompute will be created in the same region as workspace
@@ -167,6 +170,7 @@ run_config.auto_prepare_environment = True
 
 import os
 
+print("reco_gpu.yaml path")
 print(os.path.dirname('reco_gpu.yaml'))
 
 # specify CondaDependencies obj
