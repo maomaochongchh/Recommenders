@@ -74,10 +74,10 @@ steps:
     scriptLocation: inlineScript
     inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
 
-- bash: |
-     echo "$Build_ArtifactStagingDirectory"
-     
-- task:PublishBuildArtifacts@1
+#- bash: |
+#     echo "$Build_ArtifactStagingDirectory"
+#     
+#- task:PublishBuildArtifacts@1
 
 
 #- task: PythonScript@0:
