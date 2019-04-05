@@ -193,6 +193,7 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 # Show run details
 run
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
-
+run.download_files(prefix='azureml-logs')
+run.download_files(prefix='logs')
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
 
