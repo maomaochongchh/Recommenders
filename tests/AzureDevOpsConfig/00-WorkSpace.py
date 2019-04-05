@@ -195,5 +195,6 @@ run
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
 run.download_files(prefix='azureml-logs')
 run.download_files(prefix='logs')
+run.get_file_names()
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
 
