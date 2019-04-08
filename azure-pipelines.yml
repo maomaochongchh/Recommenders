@@ -74,23 +74,13 @@ steps:
     scriptLocation: inlineScript
     inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
 
-#- bash: |
-#     echo "$Build_ArtifactStagingDirectory"
-#     
-#- task:PublishBuildArtifacts@1
+steps:
 
-
-#- task: PythonScript@0:
-##  inputs:
-#    targetType: 'inline'
-#    script:
-#      ws = Workspace(subscription_id = 15ae9cb6-95c1-483d-a0e3-b1a1a3b06324, resource_group = 'recommender', workspace_name = 'RecoWS')
-#    echo "$BUILD_REPOSITORY_LOCALPATH"
-#    ls
-
-#  displayName: ' set up ws'
-
-#- script: 
-#     python scripts/AzureDevOps.py
-#  displayName: ' test_aml_compute'
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results **/test-*.xml'
+  inputs:
+    testResultsFiles: '**/test-*.xml'
+    failTaskOnFailedTests: true
+  condition: succeededOrFailed()
+  
 
