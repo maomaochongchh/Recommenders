@@ -74,13 +74,11 @@ steps:
     scriptLocation: inlineScript
     inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
 
-steps:
-
 - task: PublishTestResults@2
   displayName: 'Publish Test Results **/test-*.xml'
   inputs:
     testResultsFiles: '**/test-*.xml'
     failTaskOnFailedTests: true
   condition: succeededOrFailed()
-  
+
 
