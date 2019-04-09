@@ -193,6 +193,12 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 
 # Show run details
 run
+
+run = Run.get_context()
+name_of_upload = "reports"
+path_on_disk = "reports"
+run.upload_folder(name_of_upload, path_on_disk)
+
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
 run.download_files(prefix='azureml-logs')
 run.download_files(prefix='logs')
