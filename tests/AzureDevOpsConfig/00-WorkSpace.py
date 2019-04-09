@@ -172,6 +172,7 @@ import os
 
 print("reco_gpu.yaml path")
 print(os.path.dirname('reco_gpu.yaml'))
+print('reco_gpu.yaml exists ',os.path.exists('reco_gpu.yaml'))
 
 # specify CondaDependencies obj
 run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='reco_gpu.yaml')
@@ -196,6 +197,7 @@ run
 run.download_files(prefix='azureml-logs')
 run.download_files(prefix='logs')
 run.download_files(prefix='reports')
-print('filenames ',run.get_file_names())
+print('bz')
+print('filenames ', run.get_file_names())
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
 
