@@ -195,7 +195,7 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 run
 print('filenames ', run.get_file_names())
 
-import azureml.Run
+from azureml.core.run import Run
 run = Run.get_context(allow_offline=False)
 name_of_upload = "test-unit.xml"
 path_on_disk = "reports"
