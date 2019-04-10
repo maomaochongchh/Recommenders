@@ -3,6 +3,8 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+#
+#
 
 trigger:
 - azure-pipelines-bz
@@ -33,9 +35,9 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- script: |
-    conda env create -n reco_gpu -f ./reco_gpu.yaml 
-  displayName: 'create conda env3'
+#- script: |
+#    conda env create -n reco_gpu -f ./reco_gpu.yaml 
+#  displayName: 'create conda env3'
 
 - script: |
      chmod +x scripts/*.py
@@ -51,13 +53,10 @@ steps:
      pip install -r tests/AzureDevOpsConfig/requirements.txt
   displayName: 'install cli'
 
-- task: PythonScript@0
-  inputs:
-    targetType: 'inline'
-    script:
-      source activate reco_gpu|
-      pytest tests/unit/test_python_utils.py -m "not notebooks and not spark and gpu" --junitxml=reports/test-unit.xml  
-  displayName: ' Python Script'
+#- script: |
+#     source activate reco_gp && \
+#     pytest tests/unit -m "not notebooks and not spark and not gpu" --junitxml=reports/test-unit.xml
+#  displayName: ' Python Script'
   
 #- bash: |
 #    conda env list
@@ -67,12 +66,12 @@ steps:
 #    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
 #  displayName: 'unit tests'
 
-#- task: AzureCLI@1
-#  displayName: 'Create or get workspace'
-#  inputs:
-#    azureSubscription: 'AzureML Nursery (15ae9cb6-95c1-483d-a0e3-b1a1a3b06324)'
-#    scriptLocation: inlineScript
-#    inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
+- task: AzureCLI@1
+  displayName: 'Create or get workspace'
+  inputs:
+    azureSubscription: 'AzureML Nursery (15ae9cb6-95c1-483d-a0e3-b1a1a3b06324)'
+    scriptLocation: inlineScript
+    inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
 
 - task: PublishTestResults@2
   displayName: 'Publish Test Results **/test-*.xml'
