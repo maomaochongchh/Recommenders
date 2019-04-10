@@ -53,9 +53,9 @@ steps:
      pip install -r tests/AzureDevOpsConfig/requirements.txt
   displayName: 'install cli'
 
-- script: 
-     source activate reco_gpu    
-     pytest tests/unit/test_python_utils.py -m "not notebooks and not spark and not gpu" --junitxml=reports/test-unit.xml
+- script: |
+     source activate reco_gp && \
+     pytest tests/unit -m "not notebooks and not spark and not gpu" --junitxml=reports/test-unit.xml
   displayName: ' Python Script'
   
 #- bash: |
