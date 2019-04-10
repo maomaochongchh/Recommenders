@@ -4,7 +4,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 #
-## no gpu testing free devops no azure
+#
 
 trigger:
 - azure-pipelines-bz
@@ -53,10 +53,10 @@ steps:
      pip install -r tests/AzureDevOpsConfig/requirements.txt
   displayName: 'install cli'
 
-- script: |
-     source activate reco_gp && \
-     pytest tests/unit -m "not notebooks and not spark and not gpu" --junitxml=reports/test-unit.xml
-  displayName: ' Python Script'
+#- script: |
+#     source activate reco_gp && \
+#     pytest tests/unit -m "not notebooks and not spark and not gpu" --junitxml=reports/test-unit.xml
+#  displayName: ' Python Script'
   
 #- bash: |
 #    conda env list
