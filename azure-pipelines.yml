@@ -35,9 +35,9 @@ steps:
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-- script: |
-    conda env create -n reco_gpu -f ./reco_gpu.yaml 
-  displayName: 'create conda env3'
+#- script: |
+#    conda env create -n reco_gpu -f ./reco_gpu.yaml 
+#  displayName: 'create conda env3'
 
 - script: |
      chmod +x scripts/*.py
