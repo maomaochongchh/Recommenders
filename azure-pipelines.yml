@@ -51,13 +51,13 @@ steps:
      pip install -r tests/AzureDevOpsConfig/requirements.txt
   displayName: 'install cli'
 
-#- task: PythonScript@0
-#  inputs:
-#    targetType: 'inline'
-#    script: |
-#      print('Hello world 1')
-#      print('Hello world 2')
-#  displayName: ' Python Script'
+- task: PythonScript@0
+  inputs:
+    targetType: 'inline'
+    script:
+      source activate reco_gpu|
+      pytest tests/unit/test_python_utils.py -m "not notebooks and not spark and gpu" --junitxml=reports/test-unit.xml  
+  displayName: ' Python Script'
   
 #- bash: |
 #    conda env list
@@ -67,12 +67,12 @@ steps:
 #    pytest tests/unit/test_gpu_utils.py::test_get_number_gpus
 #  displayName: 'unit tests'
 
-- task: AzureCLI@1
-  displayName: 'Create or get workspace'
-  inputs:
-    azureSubscription: 'AzureML Nursery (15ae9cb6-95c1-483d-a0e3-b1a1a3b06324)'
-    scriptLocation: inlineScript
-    inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
+#- task: AzureCLI@1
+#  displayName: 'Create or get workspace'
+#  inputs:
+#    azureSubscription: 'AzureML Nursery (15ae9cb6-95c1-483d-a0e3-b1a1a3b06324)'
+#    scriptLocation: inlineScript
+#    inlineScript: 'python tests/AzureDevOpsConfig/00-WorkSpace.py'
 
 - task: PublishTestResults@2
   displayName: 'Publish Test Results **/test-*.xml'
