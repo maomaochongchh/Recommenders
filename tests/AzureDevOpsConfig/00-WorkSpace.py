@@ -194,15 +194,15 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 # Show run details
 run
 
-run = run.get_context()
+run = run.get_context(allow_offline=False)
 name_of_upload = "test-unit.xml"
 path_on_disk = "reports"
-run.upload_files(name_of_upload, path_on_disk)
+run.upload_folder(name_of_upload, path_on_disk)
 
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
-run.download_files(prefix='azureml-logs')
-run.download_files(prefix='logs')
-run.download_files(prefix='reports')
+run.upload_files(prefix='azureml-logs')
+run.upload_files(prefix='logs')
+run.upload_files(prefix='reports')
 print('bz')
 print('filenames ', run.get_file_names())
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
