@@ -200,10 +200,11 @@ path_on_disk = "reports"
 run.upload_folder(name_of_upload, path_on_disk)
 
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
-run.upload_files(prefix='azureml-logs')
-run.upload_files(prefix='logs')
-run.upload_files(prefix='reports')
+#run.upload_files(prefix='azureml-logs')
+#run.upload_files(prefix='logs')
+#run.upload_files(prefix='reports')
+run.upload_files("test-unit.xml","reports")
 print('bz')
-print('filenames ', run.get_file_names())
+#print('filenames ', run.get_file_names())
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
 
