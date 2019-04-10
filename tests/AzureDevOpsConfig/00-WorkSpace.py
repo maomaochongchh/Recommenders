@@ -194,7 +194,7 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 # Show run details
 run
 
-run = run.get_context(allow_offline=False)
+run = Run.get_context(allow_offline=False)
 name_of_upload = "test-unit.xml"
 path_on_disk = "reports"
 run.upload_folder(name_of_upload, path_on_disk)
