@@ -55,7 +55,7 @@ steps:
 
 - script: 
      source activate reco_gpu    
-       pytest tests/unit/test_python_utils.py -m "not notebooks and not spark and gpu" --junitxml=reports/test-unit.xml
+     pytest tests/unit/test_python_utils.py -m "not notebooks and not spark and gpu" --junitxml=reports/test-unit.xml
   displayName: ' Python Script'
   
 #- bash: |
