@@ -194,7 +194,7 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 # Show run details
 run
 
-run = Run.get_context()
+run = run.get_context()
 name_of_upload = "reports"
 path_on_disk = "reports"
 run.upload_folder(name_of_upload, path_on_disk)
