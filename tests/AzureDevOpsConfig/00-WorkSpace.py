@@ -171,11 +171,11 @@ run_config.auto_prepare_environment = True
 import os
 
 print("reco_gpu.yaml path")
-print(os.path.dirname('reco_gpu.yaml'))
-print('reco_gpu.yaml exists ',os.path.exists('reco_gpu.yaml'))
+print(os.path.dirname('./reco_gpu.yaml'))
+print('reco_gpu.yaml exists ',os.path.exists('./reco_gpu.yaml'))
 
 # specify CondaDependencies obj
-run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='reco_gpu.yaml')
+run_config.environment.python.conda_dependencies = CondaDependencies(conda_dependencies_file_path='./reco_gpu.yaml')
 
 
 
@@ -192,7 +192,7 @@ run = experiment.submit(script_run_config)
 run.wait_for_completion(show_output=True, wait_post_processing=True)
 
 # Show run details
-run
+run.details
 
 print('filenames ', run.get_file_names())
 
@@ -211,7 +211,11 @@ print('filenames ', run.get_file_names())
 #run.upload_files(prefix='azureml-logs')
 #run.upload_files(prefix='logs')
 #run.upload_files(prefix='reports')
-# run.upload_files("test-unit.xml","reports")
+
+#
+# use this
+#
+# run.upload_files("./outputs/test-unit.xml","reports/test-unit.xml")
 print('bz after upload files')
 #print('filenames ', run.get_file_names())
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
