@@ -27,17 +27,16 @@ steps:
 - script: 'pip install azureml-sdk'
   displayName: 'Prepare Conda Environment (using yml)'
   continueOnError: true
+l
 
-#- script: 'sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli'
-#  displayName: 'update azure-cli'
   
 - script: 
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
-#- script: |
-#    conda env create -n reco_gpu -f ./reco_gpu.yaml 
-#  displayName: 'create conda env3'
+- script: |
+     more ./reco_gpu.yaml
+  displayName: 'Print reco_gpu.yaml'
 
 - script: |
      chmod +x scripts/*.py
