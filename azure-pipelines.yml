@@ -7,12 +7,7 @@
 #
 
 trigger:
- branches:
-   include:
-   - azure-pipelines-bz
- paths:
-   exclude:
-     - README.md
+- azure-pipelines-bz
 
 pool:
  vmImage: 'ubuntu-16.04'
