@@ -26,21 +26,18 @@ steps:
 - script: 'pip install azureml-sdk'
   displayName: 'Prepare Conda Environment (using yml)'
   continueOnError: true
-
   
 - script: 
      python scripts/generate_conda_file.py --gpu
   displayName: ' generate_conda_file.py'
 
 - script: |
-     more ./reco_gpu.yaml
-  displayName: 'Print reco_gpu.yaml'
-
-- script: |
      chmod +x scripts/*.py
      ls -al scripts
      chmod +x tests/AzureDevOpsConfig/*.py
      ls -al tests/AzureDevOpsConfig
+     pwd
+     ls
   displayName: 'ls'
 
 - script: |
