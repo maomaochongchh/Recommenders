@@ -182,9 +182,6 @@ print("before import ScriptRunConfig")
 # Now submit a run on AmlCompute
 from azureml.core.script_run_config import ScriptRunConfig
 
-from azureml.core.run import Run
-run = Run.get_context(allow_offline=False)
-
 print("before folder = .")
 project_folder = "."
 print('before ScriptRunconfig')
