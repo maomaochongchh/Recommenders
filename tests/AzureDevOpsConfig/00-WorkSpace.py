@@ -189,14 +189,12 @@ script_run_config = ScriptRunConfig(source_directory=project_folder,
                                     script='./tests/AzureDevOpsConfig/runpytest.py',
                                     run_config=run_config)
 
-
-
 print('before submit')
 run = experiment.submit(script_run_config)
 run.wait_for_completion(show_output=True, wait_post_processing=True)
 
 # Show run details
-run.details
+#run.details()
 
 print('filenames ', run.get_file_names())
 
