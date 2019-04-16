@@ -185,7 +185,7 @@ from azureml.core.run import Run
 
 print('bz after import')
 run = Run.get_context(allow_offline=False)
-print("before folder = .)
+print("before folder = .")
 project_folder = "."
 print('before ScriptRunconfig')
 script_run_config = ScriptRunConfig(source_directory=project_folder,
