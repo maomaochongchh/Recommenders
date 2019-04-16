@@ -181,16 +181,17 @@ print("before import ScriptRunConfig")
 
 # Now submit a run on AmlCompute
 from azureml.core.script_run_config import ScriptRunConfig
+from azureml.core.run import Run
+
+print('bz after import')
+run = Run.get_context(allow_offline=False)
 print("before folder = .)
 project_folder = "."
 print('before ScriptRunconfig')
 script_run_config = ScriptRunConfig(source_directory=project_folder,
                                     script='./tests/AzureDevOpsConfig/runpytest.py',
                                     run_config=run_config)
-from azureml.core.run import Run
 
-print('bz after import')
-run = Run.get_context(allow_offline=False)
 print('before submit')
 run = experiment.submit(script_run_config)
 run.wait_for_completion(show_output=True, wait_post_processing=True)
