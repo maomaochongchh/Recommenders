@@ -1,8 +1,8 @@
 import subprocess
 from azureml.core import Run
 
-subprocess.run(["python", "-m", "pytest","tests/unit","-m","not notebooks and not spark and not gpu", "--junitxml=reports/test-unit.xml"])
-#subprocess.run(["pytest","tests/unit/test_python_utils.py","-m","not notebooks and not spark and gpu", "--junitxml=reports/test-unit.xml"])
+#subprocess.run(["python", "-m", "pytest","tests/unit","-m","not notebooks and not spark and not gpu", "--junitxml=reports/test-unit.xml"])
+subprocess.run(["pytest","tests/unit/test_python_utils.py","-m","not notebooks and not spark and gpu", "--junitxml=reports/test-unit.xml"])
 
 
 #run = Run.get_context()
