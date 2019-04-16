@@ -181,16 +181,17 @@ print("before import ScriptRunConfig")
 
 # Now submit a run on AmlCompute
 from azureml.core.script_run_config import ScriptRunConfig
-from azureml.core.run import Run
 
-print('bz after import')
-run = Run.get_context(allow_offline=False)
+
 print("before folder = .")
 project_folder = "."
 print('before ScriptRunconfig')
 script_run_config = ScriptRunConfig(source_directory=project_folder,
                                     script='./tests/AzureDevOpsConfig/runpytest.py',
                                     run_config=run_config)
+
+from azureml.core.run import Run
+run = Run.get_context(allow_offline=False)
 
 print('before submit')
 run = experiment.submit(script_run_config)
@@ -206,10 +207,10 @@ print('filenames ', run.get_file_names())
 #print('bz after import')
 #run = Run.get_context(allow_offline=False)
 
-#print('bz after run.get_context')
-#name_of_upload = "test-unit.xml"
-#path_on_disk = "reports"
-#run.upload_folder(name_of_upload, path_on_disk)
+print('bz after run.get_context')
+name_of_upload = "test-unit.xml"
+path_on_disk = "reports"
+run.upload_folder(name_of_upload, path_on_disk)
 
 #print('bz after upload folder')
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
@@ -220,7 +221,7 @@ print('filenames ', run.get_file_names())
 #
 # use this
 #
-# run.upload_files("./outputs/test-unit.xml","reports/test-unit.xml")
+run.upload_files("./outputs/test-unit.xml","reports/test-unit.xml")
 print('bz after upload files')
 #print('filenames ', run.get_file_names())
 # call sdk fcn to log to aml compute and then from control plane, pull it back down
