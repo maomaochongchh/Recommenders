@@ -211,7 +211,8 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 
 #print('bz after upload folder')
 # go to azure portal to see log in azure ws and look for experiment name and look for individual run
-#run.upload_files(prefix='azureml-logs')
+print('files',run.get_file_names())
+run.download_files(prefix='reports')
 #run.upload_files(prefix='logs')
 #run.upload_files(prefix='reports')
 
