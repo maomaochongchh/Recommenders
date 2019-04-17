@@ -191,6 +191,7 @@ script_run_config = ScriptRunConfig(source_directory=project_folder,
 
 print('before submit')
 run = experiment.submit(script_run_config)
+print('after submit')
 run.wait_for_completion(show_output=True, wait_post_processing=True)
 
 # Show run details
