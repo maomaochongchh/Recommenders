@@ -140,6 +140,7 @@ else:
 from azureml.core.runconfig import RunConfiguration
 from azureml.core.conda_dependencies import CondaDependencies
 from azureml.core.runconfig import DEFAULT_CPU_IMAGE
+from azureml.core.runconfig import DEFAULT_GPU_IMAGE
 
 # create a new runconfig object
 run_config = RunConfiguration()
@@ -159,7 +160,10 @@ run_config.amlcompute.vm_size = 'STANDARD_NC6'
 run_config.environment.docker.enabled = True
 
 # set Docker base image to the default CPU-based image
-run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+
+#run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+run_config.environment.docker.base_image = DEFAULT_GPU_IMAGE
+
 #run_config.environment.docker.base_image = 'continuumio/miniconda3'
 
 # use conda_dependencies.yml to create a conda environment in the Docker image for execution
@@ -194,10 +198,6 @@ run = experiment.submit(script_run_config)
 print('after submit')
 run.wait_for_completion(show_output=True, wait_post_processing=True)
 
-# Show run details
-#run.details()
-
-#print('filenames ', run.get_file_names())
 
 #from azureml.core.run import Run
 
